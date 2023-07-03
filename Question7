@@ -1,0 +1,18 @@
+def backspaceCompare(s, t):
+    def processString(string):
+        stack = []
+        for char in string:
+            if char != '#':
+                stack.append(char)
+            elif stack:
+                stack.pop()
+        return ''.join(stack)
+
+    processed_s = processString(s)
+    processed_t = processString(t)
+
+    return processed_s == processed_t
+#example
+s = "ab#c"
+t = "ad#c"
+print(backspaceCompare(s, t))
